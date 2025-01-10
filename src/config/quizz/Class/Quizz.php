@@ -1,12 +1,15 @@
 <?php
 
 namespace src\config\quizz\Class;
+include("QuestionArray.php");
 
 class Quizz
 {
+    private string $name;
     private QuestionArray $questions;
 
-    public function __construct(){
+    public function __construct(string $name){
+        $this->name = $name;
         $this->questions = new QuestionArray();
     }
 

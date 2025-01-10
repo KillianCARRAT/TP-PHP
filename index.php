@@ -1,7 +1,9 @@
 <?php
 
-use function src\config\getQuestions;
+use function src\config\getQuizzes;
 
 require_once "src/config/questions.php";
 
-$data = getQuestions();
+$data = getQuizzes();
+
+print_r($data);
