@@ -5,8 +5,7 @@ use Src\Config\Autoloader;
 
 Autoloader::register();
 
-
-switch ($__GET['action']){
+switch ($_GET['action']){
     case "submit":
         require_once "a";
         break;
@@ -14,6 +13,6 @@ switch ($__GET['action']){
         require_once "b";
         break;
     default :
-        require_once "";
-        exit;
+        require_once "src/views/uneVue.php";
+        break;
 }
