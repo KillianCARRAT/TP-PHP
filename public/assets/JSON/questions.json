@@ -1,0 +1,28 @@
+[
+  {
+    "Quizz1": [
+      {
+        "uuid": "0",
+        "type": "radio",
+        "question": "Le label de la question 1.",
+        "choices": [
+          "Answer 1",
+          "Answer 2",
+          "Answer 3"
+        ],
+        "answer": "Answer 2"
+      },
+      {
+        "uuid": "1",
+        "type": "radio",
+        "question": "Le label de la question 2.",
+        "choices": [
+          "Answer 1",
+          "Answer 2",
+          "Answer 3"
+        ],
+        "answer": "Answer 3"
+      }
+    ]
+  }
+]
