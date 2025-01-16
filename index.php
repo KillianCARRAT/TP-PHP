@@ -2,7 +2,7 @@
 require_once __DIR__ . '/src/config/autoload.php';
 require_once "src/config/questions.php";
 
-use function src\config\getQuestions;
+use function src\config\getQuizzes;
 
 use Src\Config\Autoloader;
 
@@ -18,6 +18,10 @@ $data = getQuestions();
 $test = new Text('test', true, 'Jaune');
 echo $test->render();
 
+
+$data = getQuizzes();
+
+print_r($data);
 
 switch ($_GET['action']){
     case "submit":
