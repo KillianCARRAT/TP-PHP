@@ -16,25 +16,21 @@ function getQuizzes(){
 
     $lesQuizzes = [];
 
+    $uuidQuiz = 0;
+
 // Parcourir chaque quizz
-    foreach ($quizzesData as $quizName => $questions) {
-        $newQuiz = new Quizz($quizName);
-
-        foreach ($questions as $questionData) {
-            $newQuestion = new Question(
-                $questionData["type"],
-                $questionData["question"],
-                $questionData["answer"]
-            );
-
-            foreach ($questionData["choices"] as $choice) {
+    foreach ($quizzesData as $quizz){
+        $quizName = array_key_first($quizz);
+        $newQuizz = new Quizz($uuidQuiz, $quizName);
+        foreach ($quizz[$quizName] as $question){
+            $newQuestion = new Question($question['type'], $question['question'], $question['answer']);
+            foreach ($question['choices'] as $choice){
                 $newQuestion->addChoice($choice);
             }
-
-            $newQuiz->addQuestion($newQuestion);
+            $newQuizz->addQuestion($newQuestion);
         }
-
-        $lesQuizzes[] = $newQuiz;
+        $lesQuizzes[] = $newQuizz;
+        $uuidQuiz++;
     }
 
     return $lesQuizzes;

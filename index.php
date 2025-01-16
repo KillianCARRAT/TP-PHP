@@ -13,24 +13,9 @@ use \src\config\input\Classes\Form\Type\Textarea;
 
 
 Autoloader::register();
-$data = getQuestions();
 
-$test = new Text('test', true, 'Jaune');
-echo $test->render();
+$quizzes = getQuizzes();
 
-
-$data = getQuizzes();
-
-print_r($data);
-
-switch ($_GET['action']){
-    case "submit":
-        require_once "a";
-        break;
-    case "reponse":
-        require_once "b";
-        break;
-    default :
-        require_once "src/views/uneVue.php";
-        break;
+foreach ($quizzes as $quiz) {
+    $quiz->afficheInfo();
 }
