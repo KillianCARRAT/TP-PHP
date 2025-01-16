@@ -6,11 +6,6 @@ use function src\config\getQuizzes;
 
 use Src\Config\Autoloader;
 
-use \src\config\input\Classes\Form\Type\Text;
-use \src\config\input\Classes\Form\Type\Checkbox;
-use \src\config\input\Classes\Form\Type\Radio;
-use \src\config\input\Classes\Form\Type\Textarea;
-
 
 Autoloader::register();
 

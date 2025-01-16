@@ -5,7 +5,7 @@ require_once "src/config/questions.php";
 
 use function src\config\getQuizzes;
 
-$uuidQuiz = $_GET["test"];
+$uuidQuiz = $_GET["uuid"];
 
 $quizzes = getQuizzes();
 
@@ -15,6 +15,7 @@ foreach ($quizzes as $quiz) {
     }
 }
 
+# Quand l'utilisateur clique sur l'un des deux bouton on reste sur cette page
 //switch ($_GET['action']){
 //    case "submit":
 //        require_once "a";

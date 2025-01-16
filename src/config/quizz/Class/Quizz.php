@@ -34,7 +34,7 @@ class Quizz
         $info = new Hidden($this->getUuid(), true, $this->getUuid());
         $info->render();
 
-        echo "<button type='submit' name='test' value=" . $this->getUuid() . ">Faire ce quiz</button>";
+        echo "<button type='submit' name='uuid' value=" . $this->getUuid() . ">Faire ce quiz</button>";
         echo "</form>";
     }
 
