@@ -29,12 +29,11 @@ class Question
         foreach($this->choices as $choice){
             echo "<br>";
             echo "<label>".$choice."</label>";
-            echo "<input type='" . $this->type ."' name='choice".$uuid."' value='".$choice."'>";
-            if (isset($_SESSION["id_question"])) {
-                if ($choice == $this->answer) {
-                    echo "Bonne réponse";
-                }
+            echo "<input type='" . $this->type . "' name='choice" . $uuid . "' value='" . $choice . "' ";
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                echo "checked";
             }
+            echo ">";
         }
         echo "</fieldset>";
     }

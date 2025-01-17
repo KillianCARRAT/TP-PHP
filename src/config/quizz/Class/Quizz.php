@@ -42,12 +42,12 @@ class Quizz
     public function afficherQuiz(){
         $truc = 0;
         echo $this->name;
-        echo '<form method="get" action="../../../../quiz.php?uuid=' . $this->getUuid() . '">';
+        echo '<form method="post" action="../../../../quiz.php">';
         foreach($this->questions as $question) {
             $question->render($truc);
             $truc++;
         }
-        echo '<button type="submit" name="uuid" value="' . $this->uuid .'">Submit</button>';
+        echo "<button type='submit' name='uuid' value=" . $this->getUuid() . ">Submit</button>";
         echo '</form>';
     }
 }
