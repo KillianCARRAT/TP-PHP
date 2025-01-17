@@ -50,4 +50,16 @@ class Quizz
         echo "<button type='submit' name='uuid' value=" . $this->getUuid() . ">Submit</button>";
         echo '</form>';
     }
+
+    public function afficherReponses(){
+        $truc = 0;
+        echo $this->name;
+        echo '<form method="post" action="../../../../quiz.php">';
+        foreach($this->questions as $question) {
+            $question->renderReponse($truc);
+            $truc++;
+        }
+        echo "<button type='submit' name='uuid' value=" . $this->getUuid() . ">Submit</button>";
+        echo '</form>';
+    }
 }

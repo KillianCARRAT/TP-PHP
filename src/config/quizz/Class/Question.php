@@ -30,8 +30,20 @@ class Question
             echo "<br>";
             echo "<label>".$choice."</label>";
             echo "<input type='" . $this->type . "' name='choice" . $uuid . "' value='" . $choice . "' ";
-            if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                echo "checked";
+            echo ">";
+        }
+        echo "</fieldset>";
+    }
+
+    public function renderReponse($uuid){
+        echo $this->question;
+        echo "<fieldset id='". $uuid."'>";
+        foreach($this->choices as $choice){
+            echo "<br>";
+            echo "<label>".$choice."</label>";
+            echo "<input type='" . $this->type . "' name='choice" . $uuid . "' value='" . $choice . "' ";
+            if ($this->answer == $choice){
+                echo "Bonne reponse";
             }
             echo ">";
         }
