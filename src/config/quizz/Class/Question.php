@@ -24,15 +24,18 @@ class Question
     }
 
     public function render($uuid){
-        echo "<div class='question'>";
         echo $this->question;
-        echo "<form method='post' action=''>";
+        echo "<fieldset id='". $uuid."'>";
         foreach($this->choices as $choice){
             echo "<br>";
             echo "<label>".$choice."</label>";
             echo "<input type='" . $this->type ."' name='choice".$uuid."' value='".$choice."'>";
+            if (isset($_SESSION["id_question"])) {
+                if ($choice == $this->answer) {
+                    echo "Bonne réponse";
+                }
+            }
         }
-        echo "</form>";
-        echo "</div>";
+        echo "</fieldset>";
     }
 }

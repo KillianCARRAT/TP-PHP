@@ -40,18 +40,14 @@ class Quizz
 
 
     public function afficherQuiz(){
+        $truc = 0;
         echo $this->name;
-        echo '<form method="post" action="../../../../answers.php">';
-        foreach($this->questions as $question){
-            $question->render($this->uuid);}
-        echo '<button type="submit" name="uuid" value=' . $this->uuid . '>Submit</button>';
-        echo '</form>';
-    }
-
-    public function afficherReponses() {
-        echo $this->name . "<br>";
-        foreach($this->questions as $question){
-            echo $question->answer . "<br>";
+        echo '<form method="get" action="../../../../quiz.php?uuid=' . $this->getUuid() . '">';
+        foreach($this->questions as $question) {
+            $question->render($truc);
+            $truc++;
         }
+        echo '<button type="submit" name="uuid" value="' . $this->uuid .'">Submit</button>';
+        echo '</form>';
     }
 }
