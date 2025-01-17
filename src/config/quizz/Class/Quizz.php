@@ -41,11 +41,17 @@ class Quizz
 
     public function afficherQuiz(){
         echo $this->name;
-        echo '<form action="" method="post">';
+        echo '<form method="post" action="../../../../answers.php">';
         foreach($this->questions as $question){
-            $question->render();
-            //echo '<input type='.$question.getType().' value='.$question.getQuestion().'>';
-        }
+            $question->render($this->uuid);}
+        echo '<button type="submit" name="uuid" value=' . $this->uuid . '>Submit</button>';
         echo '</form>';
+    }
+
+    public function afficherReponses() {
+        echo $this->name . "<br>";
+        foreach($this->questions as $question){
+            echo $question->answer . "<br>";
+        }
     }
 }
